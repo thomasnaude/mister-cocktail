@@ -9,9 +9,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 </head>
 <body>
-  <h1><%= link_to "Mister Cocktail", root_path %></h1>
+  <%= render 'shared/navbar' %>
 
-<%= yield %>
+  <div class="content">
+    <%= yield %>
+  </div>
+
+  <%= render 'shared/footer' %>
 
 </body>
 </html>
