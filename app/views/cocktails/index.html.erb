@@ -1,10 +1,24 @@
-<h2>All cocktails</h2>
+<div class="text-center">
+  <h2>All cocktails</h2>
+</div>
 
 
-<div>
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-        <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    <% end %>
-  </ul>
+<div class="container">
+  <% @cocktails.each_slice(3) do |row| %>
+
+    <div class="row">
+      <% row.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+
+          <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo %>);">
+            <div class="card-description">
+              <h2><%= cocktail.name %></h2>
+            </div>
+            <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

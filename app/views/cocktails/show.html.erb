@@ -1,8 +1,12 @@
-<h2><%= @cocktail.name %></h2>
-<%= cl_image_tag(@cocktail.photo, :radius=>14, :width=>400, :crop=>:scale) %>
-<div>
-  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail) %>
+
+<div class="banner-show" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.photo %>);">
+  <h1><%= @cocktail.name %></h1>
 </div>
+
+<div class="text-center">
+  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn dose-btn" %>
+</div>
+
 <div>
   <ul>
     <% @cocktail.doses.each do |dose| %>
