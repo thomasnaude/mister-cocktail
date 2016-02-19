@@ -1,4 +1,5 @@
 <h2><%= @cocktail.name %></h2>
+<%= cl_image_tag(@cocktail.photo, :radius=>14, :width=>400, :crop=>:scale) %>
 <div>
   <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail) %>
 </div>
